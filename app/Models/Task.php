@@ -29,7 +29,16 @@ class Task extends Model
         return [
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'status' => 'required|string|max:255'
+            'status' => 'string|max:255'
+        ];
+    }
+
+    public static function rulesUpdate(): array
+    {
+        return [
+            'title' => 'sometimes|string|max:255',
+            'description' => 'nullable|string',
+            'status' => 'string|max:255'
         ];
     }
 }

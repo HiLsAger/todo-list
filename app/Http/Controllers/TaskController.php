@@ -38,7 +38,7 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        $task->update($request->validated());
+        $task->update($request->validate(Task::rulesUpdate()));
         return $task;
     }
 
